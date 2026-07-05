@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Xplec Host — Telegram Bot Hosting, Uncomplicated</title>
+<meta name="description" content="The Xplec Host is a fast, secure, always-on hosting platform built for Telegram bots. One-click deploys, live console logs, automatic backups, and 99.9% uptime.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12L10 6M4 12L10 18M4 12H20" stroke="url(#navgrad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="navgrad" x1="4" y1="6" x2="20" y2="18"><stop stop-color="#5CE1FF"/><stop offset="1" stop-color="#2E7CFF"/></linearGradient></defs></svg>
+      </span>
+      The Xplec Host
+    </a>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://t.me/xplechostbot" class="btn btn-ghost" target="_blank" rel="noopener">Open Bot</a>
+      <a href="#pricing" class="btn btn-primary">Start Hosting</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#features">Features</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a href="https://t.me/xplechostbot" target="_blank" rel="noopener">Open @xplechostbot</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline poster="assets/hero-bg.mp4">
+      <source src="assets/hero-bg.mp4" type="video/mp4">
+    </video>
+    <div class="hero-scrim"></div>
+    <div class="hero-grid"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="status-row" data-reveal>
+      <span class="status-pill"><i class="dot dot-online"></i>All systems online</span>
+      <span class="status-pill"><i class="dot dot-fast"></i>Deploys in ~4s</span>
+      <span class="status-pill"><i class="dot dot-secure"></i>TLS &amp; sandboxed</span>
+    </div>
+
+    <h1 data-reveal>Host your Telegram bots<br><span class="grad-text">without touching a server.</span></h1>
+    <p class="hero-sub" data-reveal>Fast, secure, and always online. Push your code, get a running bot — no VPS, no cron jobs babysitting a process at 3am.</p>
+
+    <div class="hero-actions" data-reveal>
+      <a href="#pricing" class="btn btn-primary btn-lg">🚀 Start Hosting</a>
+      <a href="https://t.me/xplechostbot" class="btn btn-outline btn-lg" target="_blank" rel="noopener">🤖 Open @xplechostbot</a>
+    </div>
+
+    <div class="hero-console" data-reveal>
+      <div class="console-bar">
+        <span class="console-dot" style="background:#ff5f57"></span>
+        <span class="console-dot" style="background:#febc2e"></span>
+        <span class="console-dot" style="background:#28c840"></span>
+        <span class="console-title">deploy.log — tarabot</span>
+      </div>
+      <div class="console-body" id="consoleBody"></div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true"><span></span>Scroll</div>
+</section>
+
+<!-- LOGOS / TRUST STRIP -->
+<section class="strip">
+  <div class="strip-inner">
+    <span>Built for python-telegram-bot</span><span>·</span>
+    <span>Telethon &amp; Pyrogram ready</span><span>·</span>
+    <span>Node &amp; grammY supported</span><span>·</span>
+    <span>Zero-downtime restarts</span><span>·</span>
+    <span>Region: Asia + EU edge</span>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-head">
+    <span class="eyebrow">Platform</span>
+    <h2>Everything a bot needs to stay alive</h2>
+    <p>Ship your <code>bot.py</code> or <code>index.js</code>, and let the platform handle the rest.</p>
+  </div>
+
+  <div class="feature-grid">
+    <div class="feature-card"><div class="fc-icon">⚡</div><h3>One-Click Deployment</h3><p>Upload a ZIP or connect a repo — your bot is live before your coffee cools.</p></div>
+    <div class="feature-card"><div class="fc-icon">🤖</div><h3>Telegram-Optimized</h3><p>Pre-warmed containers tuned for long-polling and webhook bots alike.</p></div>
+    <div class="feature-card"><div class="fc-icon">🛡️</div><h3>Advanced Security</h3><p>Isolated sandboxes, encrypted secrets, and per-bot resource caps.</p></div>
+    <div class="feature-card"><div class="fc-icon">🌐</div><h3>99.9% Uptime</h3><p>Distributed nodes with automatic failover keep your bot answering.</p></div>
+    <div class="feature-card"><div class="fc-icon">📊</div><h3>Live Resource Monitoring</h3><p>Watch CPU, RAM, and storage update in real time, per bot.</p></div>
+    <div class="feature-card"><div class="fc-icon">💾</div><h3>Automatic Backups</h3><p>Daily snapshots of your code and data, restorable in one click.</p></div>
+    <div class="feature-card"><div class="fc-icon">📁</div><h3>File Manager</h3><p>Browse, edit, and upload files straight from the dashboard.</p></div>
+    <div class="feature-card"><div class="fc-icon">🖥️</div><h3>Web Terminal</h3><p>A real shell into your bot's container — no SSH keys required.</p></div>
+    <div class="feature-card"><div class="fc-icon">📜</div><h3>Live Console Logs</h3><p>Stream stdout and stderr as your bot runs, with searchable history.</p></div>
+    <div class="feature-card"><div class="fc-icon">🔄</div><h3>Auto Restart</h3><p>Crashes get caught and restarted automatically, with backoff.</p></div>
+    <div class="feature-card"><div class="fc-icon">🚀</div><h3>High-Speed Servers</h3><p>NVMe storage and low-latency networking for snappy responses.</p></div>
+    <div class="feature-card"><div class="fc-icon">📱</div><h3>Mobile Dashboard</h3><p>Restart a bot or check logs from your phone, mid-commute.</p></div>
+  </div>
+</section>
+
+<!-- DASHBOARD PREVIEW -->
+<section class="section section-alt" id="dashboard">
+  <div class="section-head">
+    <span class="eyebrow">Dashboard</span>
+    <h2>One screen. Every bot you run.</h2>
+    <p>Control, monitor, and debug without leaving the browser.</p>
+  </div>
+
+  <div class="dash-mock">
+    <div class="dash-sidebar">
+      <div class="dash-logo">✕ Xplec</div>
+      <div class="dash-nav-item active">🤖 Bots</div>
+      <div class="dash-nav-item">📁 Files</div>
+      <div class="dash-nav-item">🖥️ Terminal</div>
+      <div class="dash-nav-item">💾 Backups</div>
+      <div class="dash-nav-item">⚙️ Settings</div>
+    </div>
+
+    <div class="dash-main">
+      <div class="dash-topbar">
+        <div>
+          <div class="dash-bot-name">tarabot <span class="badge badge-live">● running</span></div>
+          <div class="dash-bot-sub">python3 · bot.py · uptime 6d 4h</div>
+        </div>
+        <div class="dash-controls">
+          <button class="dctrl dctrl-start">▶ Start</button>
+          <button class="dctrl dctrl-stop">⏸ Stop</button>
+          <button class="dctrl dctrl-restart">🔄 Restart</button>
+          <button class="dctrl dctrl-upload">⬆ Upload ZIP</button>
+        </div>
+      </div>
+
+      <div class="dash-stats">
+        <div class="stat-card">
+          <div class="stat-label">CPU Usage</div>
+          <div class="stat-ring"><svg viewBox="0 0 36 36"><path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32"/><path class="ring-fg ring-cpu" stroke-dasharray="34,100" d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32"/></svg><span>34%</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">RAM Usage</div>
+          <div class="stat-ring"><svg viewBox="0 0 36 36"><path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32"/><path class="ring-fg ring-ram" stroke-dasharray="58,100" d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32"/></svg><span>58%</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Storage</div>
+          <div class="stat-ring"><svg viewBox="0 0 36 36"><path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32"/><path class="ring-fg ring-storage" stroke-dasharray="21,100" d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32"/></svg><span>21%</span></div>
+        </div>
+        <div class="stat-card stat-card-wide">
+          <div class="stat-label">Network Speed</div>
+          <div class="net-graph"><svg viewBox="0 0 100 30" preserveAspectRatio="none"><polyline points="0,22 10,18 20,20 30,10 40,14 50,6 60,12 70,8 80,15 90,9 100,13" /></svg></div>
+          <div class="net-values"><span>↓ 3.2 MB/s</span><span>↑ 1.1 MB/s</span></div>
+        </div>
+      </div>
+
+      <div class="dash-bottom">
+        <div class="dash-console">
+          <div class="dash-console-head">Console Output</div>
+          <div class="dash-console-body">
+            <div><span class="ok">[INFO]</span> Container started</div>
+            <div><span class="ok">[INFO]</span> Bot connected to Telegram API</div>
+            <div><span class="warn">[WARN]</span> Rate limit nearing on getUpdates</div>
+            <div><span class="ok">[INFO]</span> Handling /start from user 84213</div>
+            <div class="cursor-line"><span class="ok">[INFO]</span> Listening for updates<span class="blink">▍</span></div>
+          </div>
+        </div>
+        <div class="dash-deploy">
+          <div class="dash-console-head">Deployment Progress</div>
+          <ul class="deploy-steps">
+            <li class="done">Uploading archive</li>
+            <li class="done">Installing dependencies</li>
+            <li class="active">Starting process</li>
+            <li>Health check</li>
+          </ul>
+          <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="section" id="why">
+  <div class="section-head">
+    <span class="eyebrow">Why us</span>
+    <h2>Built by people who host their own bots too</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-item"><h4>Fast deployment</h4><p>From ZIP to running process in seconds, not minutes.</p></div>
+    <div class="why-item"><h4>Stable hosting</h4><p>Containers are isolated so one noisy bot never affects another.</p></div>
+    <div class="why-item"><h4>Modern infrastructure</h4><p>NVMe-backed nodes with automatic scheduling and failover.</p></div>
+    <div class="why-item"><h4>Beginner-friendly</h4><p>If you can zip a folder, you can deploy a bot here.</p></div>
+    <div class="why-item"><h4>Reliable uptime</h4><p>Health checks and auto-restart keep bots answering messages.</p></div>
+    <div class="why-item"><h4>Secure environment</h4><p>Secrets are encrypted at rest and never shown in plaintext logs.</p></div>
+    <div class="why-item"><h4>Easy management</h4><p>Start, stop, restart, and inspect every bot from one dashboard.</p></div>
+    <div class="why-item"><h4>Professional support</h4><p>Real answers on Telegram, not a ticket queue that goes quiet.</p></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section section-alt" id="pricing">
+  <div class="section-head">
+    <span class="eyebrow">Plans</span>
+    <h2>Start free. Scale when your bot does.</h2>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="price-card">
+      <h3>Free</h3>
+      <div class="price">₹0<span>/mo</span></div>
+      <p class="price-tag">For your first bot</p>
+      <ul>
+        <li>256 MB RAM · shared vCPU</li>
+        <li>1 active deployment</li>
+        <li>Community support</li>
+        <li>7-day log retention</li>
+      </ul>
+      <a href="https://t.me/xplechostbot" class="btn btn-outline btn-block" target="_blank" rel="noopener">Get started</a>
+    </div>
+
+    <div class="price-card price-featured">
+      <div class="price-badge">Most popular</div>
+      <h3>Pro</h3>
+      <div class="price">₹199<span>/mo</span></div>
+      <p class="price-tag">For bots with real users</p>
+      <ul>
+        <li>1 GB RAM · dedicated vCPU share</li>
+        <li>5 active deployments</li>
+        <li>Priority hosting queue</li>
+        <li>30-day log retention</li>
+        <li>Automatic backups</li>
+      </ul>
+      <a href="https://t.me/xplechostbot" class="btn btn-primary btn-block" target="_blank" rel="noopener">Upgrade to Pro</a>
+    </div>
+
+    <div class="price-card">
+      <h3>Enterprise</h3>
+      <div class="price">Custom</div>
+      <p class="price-tag">For teams &amp; agencies</p>
+      <ul>
+        <li>Dedicated resources</li>
+        <li>Unlimited deployments</li>
+        <li>SLA-backed uptime</li>
+        <li>Premium direct support</li>
+      </ul>
+      <a href="#contact" class="btn btn-outline btn-block">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section stats-section">
+  <div class="stats-grid">
+    <div class="stat-item"><div class="stat-num" data-count="10000" data-suffix="+">0</div><div class="stat-label-lg">Deployments shipped</div></div>
+    <div class="stat-item"><div class="stat-num" data-count="99.9" data-suffix="%" data-decimal="1">0</div><div class="stat-label-lg">Platform uptime</div></div>
+    <div class="stat-item"><div class="stat-num" data-count="3200" data-suffix="+">0</div><div class="stat-label-lg">Bots hosted</div></div>
+    <div class="stat-item"><div class="stat-num" data-count="4" data-suffix="s">0</div><div class="stat-label-lg">Avg. deploy time</div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="section-head">
+    <span class="eyebrow">Developers</span>
+    <h2>What people running bots here say</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Moved my Telethon userbot here after my VPS kept dying. Hasn't gone down once."</p>
+      <div class="testi-person"><div class="avatar" style="background:linear-gradient(135deg,#5CE1FF,#2E7CFF)">RK</div><div><strong>Rohan K.</strong><span>Bot developer</span></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"The live console alone saved me hours of guessing why deployments failed."</p>
+      <div class="testi-person"><div class="avatar" style="background:linear-gradient(135deg,#7C5CFF,#2E7CFF)">AS</div><div><strong>Ayesha S.</strong><span>Indie hacker</span></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Support actually replies on Telegram in minutes. Rare for hosting at this price."</p>
+      <div class="testi-person"><div class="avatar" style="background:linear-gradient(135deg,#5CE1FF,#7C5CFF)">MV</div><div><strong>Manav V.</strong><span>Studio owner</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt" id="faq">
+  <div class="section-head">
+    <span class="eyebrow">FAQ</span>
+    <h2>Good to know before you deploy</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">How do I host my bot?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Zip your project, open the dashboard, and drop it into the upload area. Set your start command once and the platform keeps it running.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Which languages are supported?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Python (python-telegram-bot, Telethon, Pyrogram, aiogram) and Node.js (grammY, Telegraf) are supported out of the box.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Can I restart my bot?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Yes — start, stop, and restart are one click from the dashboard, and crashed bots restart automatically.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is hosting secure?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Every bot runs in its own isolated sandbox with encrypted secrets and no shared filesystem access between users.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is there a free plan?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Yes — the Free plan runs one bot with shared resources, no card required.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-head">
+    <span class="eyebrow">Contact</span>
+    <h2>Talk to an actual human</h2>
+  </div>
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <a class="contact-link" href="https://t.me/xplec_bot" target="_blank" rel="noopener">
+        <span class="ci-icon">💬</span>
+        <span><strong>Telegram Support</strong><br>@xplec_bot</span>
+      </a>
+      <a class="contact-link" href="https://t.me/TheXplecHost" target="_blank" rel="noopener">
+        <span class="ci-icon">📢</span>
+        <span><strong>Community Channel</strong><br>@TheXplecHost</span>
+      </a>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <label>Name<input type="text" name="name" required placeholder="Your name"></label>
+      <label>Email<input type="email" name="email" required placeholder="you@example.com"></label>
+      <label>Message<textarea name="message" rows="4" required placeholder="Tell us about your bot"></textarea></label>
+      <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+      <p class="form-note" id="formNote"></p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#top" class="brand">
+        <span class="brand-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12L10 6M4 12L10 18M4 12H20" stroke="url(#footgrad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="footgrad" x1="4" y1="6" x2="20" y2="18"><stop stop-color="#5CE1FF"/><stop offset="1" stop-color="#2E7CFF"/></linearGradient></defs></svg>
+        </span>
+        The Xplec Host
+      </a>
+      <p>Hosting for Telegram bots, built by Lumivox Studios.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h5>Quick Links</h5>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <a href="https://t.me/xplechostbot" target="_blank" rel="noopener">@xplechostbot</a>
+        <a href="https://t.me/xplec_bot" target="_blank" rel="noopener">@xplec_bot</a>
+        <a href="https://t.me/TheXplecHost" target="_blank" rel="noopener">@TheXplecHost</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© <span id="year"></span> The Xplec Host. All rights reserved.</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
